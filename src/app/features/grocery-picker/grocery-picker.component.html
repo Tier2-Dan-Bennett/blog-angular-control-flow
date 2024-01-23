@@ -1,0 +1,56 @@
+<h1>My Grocery Shop</h1>
+
+<div id="groceries">
+
+    @if (!loading && groceryShop) {
+        <div id="list">
+            Shelf 🍅🍇🍒
+            <ul>
+                @for (item of groceryShop.items; track item) {
+                    <li><button (click)="chooseItem(item)">+</button>
+                        @switch (item) {
+                            @case ('apple (green)') { 🍏 }
+                            @case ('apple (red)') { 🍎 }
+                            @case ('avocado') { 🥑 }
+                            @case ('banana') { 🍌 }
+                            @case ('cherry') { 🍒 }
+                            @case ('grapes') { 🍇 }
+                            @case ('kiwi') { 🥝 }
+                            @case ('lemon') { 🍋 }
+                            @case ('orange') { 🍊 }
+                            @case ('pear') { 🍐 }
+                            @case ('pineapple') { 🍍 }
+                            @case ('strawberry') { 🍓 }
+                            @case ('tomato') { 🍅 }
+                            @case ('watermelon') { 🍉 }
+                            @default { ◼ }
+                        }
+                        {{ item }}
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div id="cart">
+            Cart 🛒
+            @if (shoppingCart.items.size) {
+                <button (click)="clearCart()">Empty</button>
+            }
+            <ul>
+                @for (item of shoppingCart.items.keys(); track item) {
+                    <li><button (click)="removeItem(item)">- </button> {{ item }} ({{ shoppingCart.items.get(item) }})</li>
+                } @empty {
+                    <p>Your cart is empty</p>
+                }
+            </ul>
+        </div>
+
+    } @else if (loading) {
+        <p>Please wait while the grocery shop is loading...</p>
+
+    } @else {
+        <p>Sorry, we're closed! Please come back later.</p>
+    }
+
+</div>
+

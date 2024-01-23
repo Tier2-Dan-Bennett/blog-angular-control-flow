@@ -1,0 +1,23 @@
+@if (shoppingList.length) {
+  There {{ shoppingList.length === 1 ? 'is' : 'are' }} {{ shoppingList.length }} item(s)
+  on your shopping list:
+  <ul>
+    @for (item of shoppingList; track item) {
+      <li>{{ item }}</li>
+    }
+  </ul>
+} @else {
+  Your shopping list is empty!
+}
+
+<!--<div *ngIf="shoppingList?.length; else listEmpty">-->
+<!--  There {{ shoppingList.length > 1 ? 'are' : 'is' }} {{ shoppingList.length }} item(s)-->
+<!--  on your shopping list:-->
+<!--  <ul>-->
+<!--    <li *ngFor="let item of shoppingList">{{ item }}</li>-->
+<!--  </ul>-->
+<!--</div>-->
+
+<!--<ng-template #listEmpty>Your shopping list is empty!</ng-template>-->
+
+<button (click)="populateList()">Add item</button>

@@ -1,0 +1,28 @@
+button
+  border: 0
+  outline: 0
+  cursor: pointer
+  color: white
+  background-color: rgb(48, 124, 173)
+  border-radius: 4px
+  font-size: 14px
+  font-weight: 500
+  padding: 4px 8px
+  display: inline-block
+  min-height: 28px
+
+#groceries
+  display: flex
+  flex-direction: row
+  &> div
+    padding: 1rem
+
+    &:first-child
+      border-right: 1px dashed
+
+  ul
+    padding-left: 0
+
+    li
+      list-style-type: none
+      padding-top: .5rem
