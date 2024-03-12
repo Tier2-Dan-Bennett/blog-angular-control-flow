@@ -4,4 +4,4 @@
 
 This repository shows an example of how to use control flows that were introduced as a feature in Angular 17.
 
-See [the blog post](https://www.tier2consulting.com/blogs/tbc) for more details.
+See [the blog post](https://www.tier2consulting.com/news-events/angular-showcase-control-flow/) for more details.
